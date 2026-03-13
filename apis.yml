@@ -1,0 +1,34 @@
+aid: microsoft-azure-logic-apps
+url: https://raw.githubusercontent.com/api-evangelist/microsoft-azure-logic-apps/refs/heads/main/apis.yml
+apis:
+  - aid: microsoft-azure-logic-apps:management-api
+    name: Azure Logic Apps REST API
+    tags:
+      - Workflow
+      - Integration
+      - Automation
+      - iPaaS
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://management.azure.com/
+    humanURL: https://learn.microsoft.com/en-us/rest/api/logic/
+    properties:
+      - url: https://learn.microsoft.com/en-us/rest/api/logic/
+        type: Documentation
+    description: >-
+      The Azure Logic Apps REST API enables programmatic management of automated workflows that integrate apps, data, services, and systems. It supports creating workflow definitions, managing triggers and actions, configuring connectors, and monitoring run history through Azure Resource Manager.
+common:
+  - type: Portal
+    url: https://portal.azure.com/
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/logic-apps/
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/logic-apps/
+  - type: Terms of Service
+    url: https://www.microsoft.com/en-us/legal/terms-of-use
+  - type: Privacy Policy
+    url: https://privacy.microsoft.com/en-us/privacystatement
+  - type: Support
+    url: https://support.microsoft.com/
+maintainers:
+  - name: Kin Lane
+    email: kin@apievangelist.com
