@@ -29,6 +29,8 @@ apis:
       - Integration
       - Workflow
     properties:
+      - url: openapi/microsoft-azure-logic-apps-openapi.yml
+        type: OpenAPI
       - type: Documentation
         url: https://learn.microsoft.com/en-us/azure/logic-apps/
       - type: APIReference
