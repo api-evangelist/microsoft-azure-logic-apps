@@ -1,0 +1,229 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Azure Logic Apps REST API — Workflows
+  description: 'Azure Logic Apps REST API — Workflows. 6 operations. Lead operation: Azure Logic Apps REST API List by subscription.
+    Self-contained Naftiko capability covering one Microsoft Azure Logic Apps business surface.'
+  tags:
+  - Microsoft Azure Logic Apps
+  - Workflows
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    MICROSOFT_AZURE_LOGIC_APPS_API_KEY: MICROSOFT_AZURE_LOGIC_APPS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: microsoft-azure-logic-apps-workflows
+    baseUri: https://management.azure.com
+    description: Azure Logic Apps REST API — Workflows business capability. Self-contained, no shared references.
+    resources:
+    - name: subscriptions-subscriptionId-providers-Microsoft.Logic-workflows
+      path: /subscriptions/{subscriptionId}/providers/Microsoft.Logic/workflows
+      operations:
+      - name: listworkflowsbysubscription
+        method: GET
+        description: Azure Logic Apps REST API List by subscription
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows
+      operations:
+      - name: listworkflowsbyresourcegroup
+        method: GET
+        description: Azure Logic Apps REST API List by resource group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof
+      path: /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{name}
+      operations:
+      - name: getworkflows
+        method: GET
+        description: Azure Logic Apps REST API Get resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createorupdateworkflows
+        method: PUT
+        description: Azure Logic Apps REST API Create or update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: updateworkflows
+        method: PATCH
+        description: Azure Logic Apps REST API Update resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteworkflows
+        method: DELETE
+        description: Azure Logic Apps REST API Delete resource
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.MICROSOFT_AZURE_LOGIC_APPS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: microsoft-azure-logic-apps-workflows-rest
+    port: 8080
+    description: REST adapter for Azure Logic Apps REST API — Workflows. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/subscriptions/{subscriptionid}/providers/microsoft-logic/workflows
+      name: subscriptions-subscriptionid-providers-microsoft-logic-workflows
+      description: REST surface for subscriptions-subscriptionId-providers-Microsoft.Logic-workflows.
+      operations:
+      - method: GET
+        name: listworkflowsbysubscription
+        description: Azure Logic Apps REST API List by subscription
+        call: microsoft-azure-logic-apps-workflows.listworkflowsbysubscription
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-logic/workflows
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: listworkflowsbyresourcegroup
+        description: Azure Logic Apps REST API List by resource group
+        call: microsoft-azure-logic-apps-workflows.listworkflowsbyresourcegroup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/subscriptions/{subscriptionid}/resourcegroups/{resourcegroupname}/providers/microsoft-logic/workflows/{name}
+      name: subscriptions-subscriptionid-resourcegroups-resourcegroupname-providers-microsof
+      description: REST surface for subscriptions-subscriptionId-resourceGroups-resourceGroupName-providers-Microsof.
+      operations:
+      - method: GET
+        name: getworkflows
+        description: Azure Logic Apps REST API Get resource
+        call: microsoft-azure-logic-apps-workflows.getworkflows
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: createorupdateworkflows
+        description: Azure Logic Apps REST API Create or update resource
+        call: microsoft-azure-logic-apps-workflows.createorupdateworkflows
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateworkflows
+        description: Azure Logic Apps REST API Update resource
+        call: microsoft-azure-logic-apps-workflows.updateworkflows
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteworkflows
+        description: Azure Logic Apps REST API Delete resource
+        call: microsoft-azure-logic-apps-workflows.deleteworkflows
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: microsoft-azure-logic-apps-workflows-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Azure Logic Apps REST API — Workflows. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: azure-logic-apps-rest-api
+      description: Azure Logic Apps REST API List by subscription
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-logic-apps-workflows.listworkflowsbysubscription
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-logic-apps-rest-api-2
+      description: Azure Logic Apps REST API List by resource group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-logic-apps-workflows.listworkflowsbyresourcegroup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-logic-apps-rest-api-3
+      description: Azure Logic Apps REST API Get resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-logic-apps-workflows.getworkflows
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-logic-apps-rest-api-4
+      description: Azure Logic Apps REST API Create or update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-logic-apps-workflows.createorupdateworkflows
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-logic-apps-rest-api-5
+      description: Azure Logic Apps REST API Update resource
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: microsoft-azure-logic-apps-workflows.updateworkflows
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: azure-logic-apps-rest-api-6
+      description: Azure Logic Apps REST API Delete resource
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: microsoft-azure-logic-apps-workflows.deleteworkflows
+      outputParameters:
+      - type: object
+        mapping: $.
