@@ -108,3 +108,5 @@ common:
       description: Connect to Salesforce CRM for record creation, updates, and event-driven workflows.
     - name: Azure API Management
       description: Expose and manage workflow endpoints through Azure API Management.
+  - type: LLMsTxt
+    url: https://portal.azure.com/llms.txt
