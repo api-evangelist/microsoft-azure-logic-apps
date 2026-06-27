@@ -39,10 +39,10 @@ apis:
         url: https://learn.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow
       - type: Pricing
         url: https://azure.microsoft.com/en-us/pricing/details/logic-apps/
-      - type: SDK
+      - type: SDKs
         url: https://learn.microsoft.com/en-us/python/api/overview/azure/mgmt-logic-readme
         title: Python SDK
-      - type: SDK
+      - type: SDKs
         url: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.logic-readme
         title: .NET SDK
     contact:
@@ -106,5 +106,5 @@ common:
         description: Connect to Salesforce CRM for record creation, updates, and event-driven workflows.
       - name: Azure API Management
         description: Expose and manage workflow endpoints through Azure API Management.
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://portal.azure.com/llms.txt
