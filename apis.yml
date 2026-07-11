@@ -52,6 +52,10 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: DomainSecurity
+    url: security/microsoft-azure-logic-apps-domain-security.yml
+  - type: Authentication
+    url: authentication/microsoft-azure-logic-apps-authentication.yml
   - type: OAuthScopes
     url: scopes/microsoft-azure-logic-apps-scopes.yml
   - type: GitHubOrganization
