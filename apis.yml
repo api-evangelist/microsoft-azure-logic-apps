@@ -3,6 +3,19 @@ description: >-
   Azure Logic Apps is a cloud platform for creating and running automated workflows that integrate apps, data, services,
   and systems. It provides a visual designer and over 400 connectors to build event-driven, scheduled, and on-demand
   integrations.
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 image: https://azure.microsoft.com/svghandler/logic-apps/
 url: https://azure.microsoft.com/en-us/services/logic-apps/
 created: '2026-03-13'
@@ -15,39 +28,56 @@ tags:
   - iPaaS
   - Workflow
 apis:
-  - name: Azure Logic Apps REST API
-    description: >-
-      Programmatic management of Azure Logic Apps automated workflows including workflow definitions, triggers, actions,
-      runs, integration accounts, and connectors.
-    image: https://azure.microsoft.com/svghandler/logic-apps/
-    humanURL: https://learn.microsoft.com/en-us/rest/api/logic/
-    baseURL: https://management.azure.com
-    tags:
-      - Automation
-      - Integration
-      - Workflow
-    properties:
-      - url: openapi/microsoft-azure-logic-apps-openapi.yml
-        type: OpenAPI
-      - type: Documentation
-        url: https://learn.microsoft.com/en-us/azure/logic-apps/
-      - type: APIReference
-        url: https://learn.microsoft.com/en-us/rest/api/logic/
-      - type: Authentication
-        url: https://learn.microsoft.com/en-us/rest/api/azure/
-      - type: GettingStarted
-        url: https://learn.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow
-      - type: Pricing
-        url: https://azure.microsoft.com/en-us/pricing/details/logic-apps/
-      - type: SDKs
-        url: https://learn.microsoft.com/en-us/python/api/overview/azure/mgmt-logic-readme
-        title: Python SDK
-      - type: SDKs
-        url: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.logic-readme
-        title: .NET SDK
-    contact:
-      - type: Support
-        url: https://azure.microsoft.com/en-us/support/
+- aid: microsoft-azure-logic-apps:microsoft-azure-logic-apps-operations-api
+  name: Azure Logic Apps Operations API
+  description: Operations operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/logic/
+  baseURL: https://management.azure.com
+  tags:
+  - Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-logic-apps-operations-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/logic-apps/
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/rest/api/logic/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/logic-apps/
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/python/api/overview/azure/mgmt-logic-readme
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.logic-readme
+- aid: microsoft-azure-logic-apps:microsoft-azure-logic-apps-workflows-api
+  name: Azure Logic Apps Workflows API
+  description: Workflows operations
+  humanURL: https://learn.microsoft.com/en-us/rest/api/logic/
+  baseURL: https://management.azure.com
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/microsoft-azure-logic-apps-workflows-api-openapi.yml
+  - type: Documentation
+    url: https://learn.microsoft.com/en-us/azure/logic-apps/
+  - type: APIReference
+    url: https://learn.microsoft.com/en-us/rest/api/logic/
+  - type: Authentication
+    url: https://learn.microsoft.com/en-us/rest/api/azure/
+  - type: GettingStarted
+    url: >-
+      https://learn.microsoft.com/en-us/azure/logic-apps/quickstart-create-first-logic-app-workflow
+  - type: Pricing
+    url: https://azure.microsoft.com/en-us/pricing/details/logic-apps/
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/python/api/overview/azure/mgmt-logic-readme
+  - type: SDKs
+    url: https://learn.microsoft.com/en-us/dotnet/api/overview/azure/resourcemanager.logic-readme
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
