@@ -26,6 +26,12 @@ tags:
   - Azure
   - Integration
   - iPaaS
+  - Workflows
+tags_raw:
+  - Automation
+  - Azure
+  - Integration
+  - iPaaS
   - Workflow
 apis:
 - aid: microsoft-azure-logic-apps:microsoft-azure-logic-apps-operations-api
@@ -33,7 +39,8 @@ apis:
   description: Operations operations
   humanURL: https://learn.microsoft.com/en-us/rest/api/logic/
   baseURL: https://management.azure.com
-  tags:
+  tags: []
+  tags_raw:
   - Operations
   properties:
   - type: OpenAPI
