@@ -3,6 +3,18 @@ description: >-
   Azure Logic Apps is a cloud platform for creating and running automated workflows that integrate apps, data, services,
   and systems. It provides a visual designer and over 400 connectors to build event-driven, scheduled, and on-demand
   integrations.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
